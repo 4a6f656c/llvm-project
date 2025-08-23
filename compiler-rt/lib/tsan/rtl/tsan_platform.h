@@ -684,16 +684,16 @@ struct MappingGoMips64_47 {
 /* Go on linux/riscv64 (48-bit VMA)
 0000 0001 0000 - 00e0 0000 0000: executable and heap (896 GiB)
 00e0 0000 0000 - 2000 0000 0000: -
-2000 0000 0000 - 2400 0000 0000: shadow - 4 TiB ( ~ 4 * app)
-2400 0000 0000 - 3000 0000 0000: -
-3000 0000 0000 - 3100 0000 0000: metainfo - 1 TiB ( ~ 1 * app)
-3100 0000 0000 - 8000 0000 0000: -
+2000 0000 0000 - 2200 0000 0000: shadow - 2 TiB ( ~ 2 * app)
+2200 0000 0000 - 3000 0000 0000: -
+3000 0000 0000 - 3080 0000 0000: metainfo - 0.5 TiB ( ~ 0.5 * app)
+3080 0000 0000 - 8000 0000 0000: -
 */
 struct MappingGoRiscv64 {
   static const uptr kMetaShadowBeg = 0x300000000000ull;
-  static const uptr kMetaShadowEnd = 0x310000000000ull;
+  static const uptr kMetaShadowEnd = 0x308000000000ull;
   static const uptr kShadowBeg = 0x200000000000ull;
-  static const uptr kShadowEnd = 0x240000000000ull;
+  static const uptr kShadowEnd = 0x220000000000ull;
   static const uptr kLoAppMemBeg = 0x000000010000ull;
   static const uptr kLoAppMemEnd = 0x000e00000000ull;
   static const uptr kMidAppMemBeg = 0;
